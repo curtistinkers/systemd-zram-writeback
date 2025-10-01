@@ -5,7 +5,7 @@ ConditionPathExists=/sys/block/%i/writeback_limit
 
 [Timer]
 OnBootSec=0
-OnUnitInactiveSec=1day
+OnUnitActiveSec=1day
 
 [Install]
 WantedBy=timers.target
