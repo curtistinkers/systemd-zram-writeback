@@ -1,6 +1,6 @@
 [Unit]
 Description=Sets 4 GB writeback_limit for /dev/%i to reduce SSD wear
-After=dev-%i.device
+DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/writeback_limit
 
 [Service]
