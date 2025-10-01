@@ -9,6 +9,3 @@ Environment=SHIFT_GB=30
 Environment=SHIFT_4K=12
 Type=oneshot
 ExecStart=/bin/bash -c "/usr/bin/echo $((WRITEBACK_GB << SHIFT_GB >> SHIFT_4K)) > /sys/block/%i/writeback_limit"
-
-[Install]
-WantedBy=multi-user.target
