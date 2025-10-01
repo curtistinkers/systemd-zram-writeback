@@ -2,6 +2,7 @@
 Description=Sets 4 GB writeback_limit for /dev/%i to reduce SSD wear
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/writeback_limit
+ConditionPathExists=/sys/block/%i/writeback_limit_enable
 
 [Service]
 Environment=WRITEBACK_GB=4
