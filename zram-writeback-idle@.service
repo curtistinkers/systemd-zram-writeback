@@ -1,9 +1,9 @@
 [Unit]
-Description=Mark pages on /dev/%i as idle
+Description=Mark 1h-stale pages on /dev/%i as idle
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 Before=zram-writeback-trigger@%i.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "/usr/bin/echo 600 > /sys/block/%i/idle"
+ExecStart=/bin/bash -c "/usr/bin/echo 3600 > /sys/block/%i/idle"
