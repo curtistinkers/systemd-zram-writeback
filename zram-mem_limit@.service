@@ -5,7 +5,7 @@ ConditionPathExists=/sys/block/%i/mem_limit
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "echo 12G > /sys/block/%i/mem_limit"
+ExecStart=/bin/bash -c "/usr/bin/echo 12G > /sys/block/%i/mem_limit"
 
 [Install]
 WantedBy=multi-user.target
