@@ -1,5 +1,5 @@
 [Unit]
-Description=Trigger writeback on /dev/%i
+Description=Trigger writeback of huge_idle pages on /dev/%i
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 After=zram-writeback-idle@%i.service
