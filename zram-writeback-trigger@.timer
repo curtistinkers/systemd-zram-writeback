@@ -1,5 +1,5 @@
 [Unit]
-Description=Trigger writeback on /dev/%i
+Description=Timer for triggering writeback on /dev/%i
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/writeback
 
