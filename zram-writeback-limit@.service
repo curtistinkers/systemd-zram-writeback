@@ -8,4 +8,7 @@ Environment=WRITEBACK_GB=4
 Environment=SHIFT_GB=30
 Environment=SHIFT_4K=12
 Type=oneshot
+RemainAfterExit=yes
 ExecStart=/bin/bash -c "/usr/bin/echo $((WRITEBACK_GB << SHIFT_GB >> SHIFT_4K)) > /sys/block/%i/writeback_limit"
+ExecStart=/bin/bash -c "/usr/bin/echo 1 > /sys/block/%i/writeback_limit_enable"
+ExecStop=/bin/bash -c "/usr/bin/echo 0 > /sys/block/%i/writeback_limit_enable"
