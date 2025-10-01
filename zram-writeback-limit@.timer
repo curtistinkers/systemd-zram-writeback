@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer to reset writeback_limit for /dev/%i to reduce SSD wear
+DefaultDependencies=false
+ConditionPathExists=/sys/block/%i/writeback_limit
+
+[Timer]
+OnBootSec=0
+OnUnitInactiveSec=1day
+
+[Install]
+WantedBy=timers.target
