@@ -1,0 +1,13 @@
+Package: systemd-zram-writeback
+Architecture: all
+Maintainer: curtistinkers <curtistinkers.commit@gmail.com>
+Homepage: https://github.com/curtistinkers/systemd-zram-writeback.git
+Version: 0.1.0
+Section: misc
+Priority: optional
+Depends: systemd-zram-generator, systemd, util-linux
+Description: Systemd templates for zram writeback to filesystem swap
+ Systemd-zram-writeback provides systemd service and timer unit templates to
+ create zram-based swap with writeback support. It uses systemd-zram-generator
+ to create zram devices and configures them for writeback functionality to
+ flush old huge pages in zram to disk.

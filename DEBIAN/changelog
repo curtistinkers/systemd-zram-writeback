@@ -1,0 +1,7 @@
+systemd-zram-writeback (0.1.0) unstable; urgency=medium
+
+  * Initial release of systemd-zram-writeback package.
+    - Provides systemd service and timer unit templates for zram writeback
+      functionality using systemd-zram-generator.
+
+ -- curtistinkers <curtistinkers.commit@gmail.com> Sun, 30 Nov 2025 06:30:00 +0000
