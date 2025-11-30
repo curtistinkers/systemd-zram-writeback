@@ -2,7 +2,7 @@ Package: systemd-zram-writeback
 Architecture: all
 Maintainer: curtistinkers <curtistinkers.commit@gmail.com>
 Homepage: https://github.com/curtistinkers/systemd-zram-writeback.git
-Version: 0.1.0
+Version: 0.1.1
 Section: misc
 Priority: optional
 Depends: systemd-zram-generator, systemd, util-linux

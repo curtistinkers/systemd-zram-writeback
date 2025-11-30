@@ -1,3 +1,9 @@
+systemd-zram-writeback (0.1.1) unstable; urgency=low
+
+  * Added zram-writeback-setup.sh script to configure zram writeback.
+    - This script configures zram devices for writeback to swap device and
+      enables systemd the timers to flush old huge pages in zram to disk.
+
 systemd-zram-writeback (0.1.0) unstable; urgency=medium
 
   * Initial release of systemd-zram-writeback package.
