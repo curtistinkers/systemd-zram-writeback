@@ -1,0 +1,51 @@
+name: Build Debian package file on tag push
+
+on:
+  push:
+    tags:
+      - "v*" # Triggers on pushes to tags starting with "v"
+
+permissions:
+  contents: write
+
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+  VERSION: ${{ github.ref_name }}
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get tag name and remove 'v'
+        id: fix_version
+        run: |
+          echo "Original Tag Name: ${VERSION}"
+          NO_V_VERSION="${VERSION#v}" # Removes a leading 'v' if present
+          echo "Version (without 'v'): ${NO_V_VERSION}"
+          echo "VERSION=${NO_V_VERSION}" >> ${GITHUB_ENV} # Make VERSION available to subsequent steps
+
+      - name: Checkout repository
+        id: checkout_repo
+        uses: actions/checkout@v4
+        with:
+          path: "REPO"
+
+      - name: Create PKG_SOURCE directory
+        id: create_pkg_source_dir
+        run: |
+          mkdir PKG_SOURCE
+
+      - name: Copy files to keep extraneous files out of the package
+        id: copy_debian_pkg_files
+        run: |
+          cp -Rf REPO/usr REPO/DEBIAN PKG_SOURCE
+
+      - name: Build .deb file
+        id: build_deb_package
+        run: |
+          dpkg-deb --build PKG_SOURCE ${{ env.REPO_NAME }}_${{ env.VERSION }}_all.deb
+
+      - name: Create release and upload assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.REPO_NAME }}_${{ env.VERSION }}_all.deb
