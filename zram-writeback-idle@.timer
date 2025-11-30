@@ -1,5 +1,5 @@
 [Unit]
-Description=Timer to mark 1h-stale pages in /dev/%i as idle
+Description=Timer to mark 1h-stale pages in /dev/%i as idle every 10 minutes
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 

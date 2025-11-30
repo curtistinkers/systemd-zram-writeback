@@ -1,5 +1,5 @@
 [Unit]
-Description=Timer to reset writeback_limit for /dev/%i to reduce SSD wear
+Description=Timer to reset writeback_limit for /dev/%i every 24 hours
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/writeback_limit
 
