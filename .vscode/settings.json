@@ -4,6 +4,7 @@
         "oneshot",
         "softprops",
         "writeback",
-        "zram"
+        "zram",
+        "zstd"
     ]
 }
