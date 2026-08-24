@@ -5,4 +5,4 @@
 <!-- markdownlint-enable -->
 
 All future development will take place in [the repo containing all my other
-debian configuration packages](https://gitub.com/curtistinkers/debian-config-packages)
+debian configuration packages](https://github.com/curtistinkers/debian-config-packages)
